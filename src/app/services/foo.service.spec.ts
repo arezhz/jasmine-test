@@ -7,7 +7,8 @@ describe('FooService', () => {
 
   beforeEach(() => {
     // TestBed.configureTestingModule({});
-    service = TestBed.inject(FooService);
+    // service = TestBed.inject(FooService);
+    service = new FooService()
   });
 
   it('should be created', () => {
@@ -17,6 +18,13 @@ describe('FooService', () => {
   it('sum method', () => {
     const result = service.sum(2,4);
     expect(result).toEqual(8);
-    expect(result).toBeLessThanOrEqual(9);
+    // expect(result).toBeLessThanOrEqual(9);
+  })
+
+  it('test observable value', (done: DoneFn) => {
+    service.testSubject$.subscribe(res=> {
+      expect(res).toBe('new value');
+      done();
+    })
   })
 });
