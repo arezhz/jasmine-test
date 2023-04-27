@@ -13,4 +13,10 @@ describe('FooService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
+  it('sum method', () => {
+    const result = service.sum(2,4);
+    expect(result).toEqual(8);
+    expect(result).toBeLessThanOrEqual(9);
+  })
 });
