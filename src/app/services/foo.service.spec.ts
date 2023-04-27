@@ -7,8 +7,8 @@ describe('FooService', () => {
 
   beforeEach(() => {
     // TestBed.configureTestingModule({});
-    // service = TestBed.inject(FooService);
-    service = new FooService()
+    service = TestBed.inject(FooService);
+    // service = new FooService()
   });
 
   it('should be created', () => {
